@@ -1,10 +1,41 @@
 # Stock indexes prediction using news
+## Streamlit repo
+https://github.com/gleb4ik177/Frontend_FN-stock_index_forecasting
+## Airflow repo
+https://github.com/gleb4ik177/Airflow_FN-stock_index_forecasting
 ## About
 The goal of this project is to predict the IMOEX and SPBIRUS2 indexes based on the time series and news from finam.ru analisys.
 ### Project architecture
 <p align="center">
   <img width="600" height="450" src="https://sun9-15.userapi.com/impg/8bmRZ3ZBF-z2GakolAZ47gjrgXqYdCJrxXw6pg/OAxO30BUNRA.jpg?size=1451x1105&quality=96&sign=3978262b45c79a9b15f9603c14b3560a&type=album">
 </p>
+
+## Researches
+### News financial sentiment analisys
+Sentiment was determined based on their influence on the stock prices. There were 3 classes (negative, positive, neutral)
+| Approach | Accuracy | F1 (macro) |
+| -------- | -------- | ---------- | 
+| BoW + SGD | 0.56 | 0.28 |
+| Tf-Idf + SGD | 0.57 | 0.24 |
+| BoW + LogReg | 0.51 | 0.34 |
+| Bert | 0.57 | - |
+### News scoring
+Score of the news is measured based on this dataset https://github.com/WebOfRussia/financial-news-sentiment/blob/main/data/data.tsv
+| Approach | MSE |
+| -------- | -------- | 
+| BoW + LinReg | 0.49 |
+###Time series forecasting
+####IMOEX
+| Model | MAPE |
+| -------- | -------- |
+| Holt-Winters | 0.044 |
+| CatBoost | 0.014 |
+
+####SPBIRUS2
+| Model | MAPE |
+| -------- | -------- |
+| Holt-Winters | 0.019 |
+| CatBoost | 0.009 |
 
 ## Backend
 Backend is implemented using FastAPI
