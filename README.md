@@ -13,25 +13,32 @@ The goal of this project is to predict the IMOEX and SPBIRUS2 indexes based on t
 ## Researches
 ### News financial sentiment analisys
 Sentiment was determined based on their influence on the stock prices. There were 3 classes (negative, positive, neutral)
+
 | Approach | Accuracy | F1 (macro) |
 | -------- | -------- | ---------- | 
 | BoW + SGD | 0.56 | 0.28 |
 | Tf-Idf + SGD | 0.57 | 0.24 |
 | BoW + LogReg | 0.51 | 0.34 |
 | Bert | 0.57 | - |
+
 ### News scoring
 Score of the news is measured based on this dataset https://github.com/WebOfRussia/financial-news-sentiment/blob/main/data/data.tsv
+
 | Approach | MSE |
 | -------- | -------- | 
 | BoW + LinReg | 0.49 |
-###Time series forecasting
-####IMOEX
+
+### Time series forecasting
+
+#### IMOEX
+
 | Model | MAPE |
 | -------- | -------- |
 | Holt-Winters | 0.044 |
 | CatBoost | 0.014 |
 
-####SPBIRUS2
+#### SPBIRUS2
+
 | Model | MAPE |
 | -------- | -------- |
 | Holt-Winters | 0.019 |
